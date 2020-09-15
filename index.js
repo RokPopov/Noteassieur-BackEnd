@@ -3,6 +3,7 @@ const loggerMiddleWare = require("morgan");
 const corsMiddleWare = require("cors");
 const { PORT } = require("./config/constants");
 const authRouter = require("./routers/auth");
+const lecturesRouter = require("./routers/lectures");
 
 const authMiddleWare = require("./auth/middleware");
 
@@ -49,6 +50,7 @@ app.post("/authorized_post_request", authMiddleWare, (req, res) => {
 });
 
 app.use("/", authRouter);
+app.use("/lectures", lecturesRouter);
 
 app.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);
