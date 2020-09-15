@@ -17,11 +17,11 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
       },
       time: {
-        type: DataTypes.DATE,
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
       url: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
       },
     },
     {
